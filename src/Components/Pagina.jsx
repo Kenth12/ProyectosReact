@@ -54,15 +54,20 @@ function Pagina() {
         <h1> Datos Personas Api </h1>
         <div className="container" >
         {datos.map((Info)=>(
-            <div>
-           <h5>{Info.email}</h5>
-           <h5>{Info.first_name} {Info.last_name}</h5>
-           <img src={Info.avatar} />
-           </div>
+            <div className="box">
+            <div className="image">
+               <img src={Info.avatar}/>
+              </div>
+              <div className="name_job">{Info.first_name} {Info.last_name}</div>
+              <div className="rating">
+                <i className="fas fa-star">Correo: {Info.email}</i>
+              </div>
+              </div> 
         ))}
        </div>
        <button onClick={CargarInfo} >Obtener datos</button>
-        
+       <button onClick={Siguiente}  >Siguiente</button>
+        <button onClick={Anterior}  >Anterior</button> 
     </>
   )
 }
