@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {useState} from 'react';
+//import {useState} from 'react';
 
 
 
@@ -13,7 +13,7 @@ function Pagina() {
         try{
             const Peticion = await axios.get(`https://reqres.in/api/users?page=1}`); 
             const Resultado = await Peticion.data; 
-            //console.log(Resultado);
+            console.log(Resultado);
             setDatos(Resultado.data);
         }catch(e){
             console.log(e);
@@ -51,7 +51,7 @@ function Pagina() {
         <h1> Datos Personas Api </h1>
         <div className='container' >
         {datos.map((Info)=>(
-            <div className='box'>
+            <div className='box' key={Info.id}>
             <div className='image'>
                <img src={Info.avatar} alt=""/>
               </div>
