@@ -56,7 +56,7 @@ function Pagina() {
         {datos.map((Info)=>(
             <div className="box">
             <div className="image">
-               <img src={Info.avatar}/>
+               <img src={Info.avatar} alt=""/>
               </div>
               <div className="name_job">{Info.first_name} {Info.last_name}</div>
               <div className="rating">
