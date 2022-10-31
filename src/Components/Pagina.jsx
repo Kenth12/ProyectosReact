@@ -65,9 +65,12 @@ function Pagina() {
               </div> 
         ))}
        </div>
-       <button onClick={CargarInfo} >Obtener datos</button>
-       <button onClick={Siguiente}  >Siguiente</button>
-        <button onClick={Anterior}  >Anterior</button> 
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"></link>
+        <div class="d-grid gap-2 col-4 mx-auto">
+        <button onClick={CargarInfo} class="btn btn-primary" type="button">Obtener datos</button>
+        <button onClick={Siguiente}  class="btn btn-primary" type="button">Siguiente</button>
+        <button onClick={Anterior}  class="btn btn-primary" type="button">Anterior</button>
+        </div>
     </>
   )
 }
