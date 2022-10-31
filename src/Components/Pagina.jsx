@@ -20,6 +20,32 @@ function Pagina() {
         }
     }
 
+    if(datos.length === 1){
+        <div>Cargando... Click nuevamente</div>
+    }
+
+    const Siguiente = async() =>{  
+        try{
+            const Peticion = await axios.get(`https://reqres.in/api/users?page=${2}`); 
+            const Resultado = await Peticion.data; 
+            //console.log(Resultado);
+            setDatos(Resultado.data);
+        }catch(e){
+            console.log(e);
+        }
+    }
+
+    const Anterior = async() =>{
+        try{
+            const Peticion = await axios.get(`https://reqres.in/api/users?page=${1}`); 
+            const Resultado = await Peticion.data; 
+            //console.log(Resultado);
+            setDatos(Resultado.data);
+        }catch(e){
+            console.log(e);
+        }
+    }
+
     
 
   return (
