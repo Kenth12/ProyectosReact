@@ -11,7 +11,7 @@ function Pagina() {
     const CargarInfo = async() =>{
 
         try{
-            const Peticion = await fetch(`https://reqres.in/api/users?page=1}`); 
+            const Peticion = await fetch('https://reqres.in/api/users?page=1}'); 
             const {data} = await Peticion.json(); 
             console.log(data);
             setDatos(data);
@@ -24,10 +24,10 @@ function Pagina() {
 
     const Siguiente = async() =>{  
         try{
-            const Peticion = await fetch(`https://reqres.in/api/users?page=${2}`); 
+            const Peticion = await fetch('https://reqres.in/api/users?page=2}'); 
             const {data} = await Peticion.json(); 
             console.log(data);
-            //setDatos(data);
+            setDatos(data);
         }catch(e){
             console.log(e);
         }
@@ -38,7 +38,7 @@ function Pagina() {
             const Peticion = await fetch(`https://reqres.in/api/users?page=1}`); 
             const {data} = await Peticion.json(); 
             console.log(data);
-            //setDatos(data);
+            setDatos(data);
         }catch(e){
             console.log(e);
         }
@@ -51,7 +51,7 @@ function Pagina() {
         <h1> Datos Personas Api </h1>
         <div className='container' >
         {datos.map((Info)=>(
-            <div className='box' key={Info.id}>
+            <div className='box' >
             <div className='image'>
                <img src={Info.avatar} alt=""/>
               </div>
