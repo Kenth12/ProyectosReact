@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 //import {useState} from 'react';
 
 
@@ -11,10 +11,10 @@ function Pagina() {
     const CargarInfo = async() =>{
 
         try{
-            const Peticion = await axios.get(`https://reqres.in/api/users?page=1}`); 
-            const Resultado = await Peticion.data; 
-            console.log(Resultado);
-            setDatos(Resultado.data);
+            const Peticion = await fetch(`https://reqres.in/api/users?page=1}`); 
+            const {data} = await Peticion.json(); 
+            console.log(data);
+            setDatos(data);
         }catch(e){
             console.log(e);
         }
@@ -24,10 +24,10 @@ function Pagina() {
 
     const Siguiente = async() =>{  
         try{
-            const Peticion = await axios.get(`https://reqres.in/api/users?page=${2}`); 
-            const Resultado = await Peticion.data; 
-            //console.log(Resultado);
-            setDatos(Resultado.data);
+            const Peticion = await fetch(`https://reqres.in/api/users?page=${2}`); 
+            const {data} = await Peticion.json(); 
+            console.log(data);
+            //setDatos(data);
         }catch(e){
             console.log(e);
         }
@@ -35,10 +35,10 @@ function Pagina() {
 
     const Anterior = async() =>{
         try{
-            const Peticion = await axios.get(`https://reqres.in/api/users?page=${1}`); 
-            const Resultado = await Peticion.data; 
-            //console.log(Resultado);
-            setDatos(Resultado.data);
+            const Peticion = await fetch(`https://reqres.in/api/users?page=1}`); 
+            const {data} = await Peticion.json(); 
+            console.log(data);
+            //setDatos(data);
         }catch(e){
             console.log(e);
         }
